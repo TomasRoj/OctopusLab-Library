@@ -46,7 +46,7 @@ Then just call one of the functions and you are ready to go! 😊
 We are glad that people like you helps to build better future of electronics projects.
 Like other github projects this github repo has a issue tab with current issues in this
 project. But, please respect all the rules included in the CODE_OF_CONDUCT.md file to
-prevent bad things here 🙌.
+prevent bad things here 🙌. If you dont know where to start, visit please the issues tab.
 
 Created by Tomas Roj and OctopusLab team in 2019. 📅
 This and many other projects are availibe under open-source MIT license. See the license file
