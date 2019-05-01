@@ -15,10 +15,10 @@ this board. ‼ This library is currently in heavy development ‼ That means ev
 can be a full of bugs and cant compile because we are still working on it. We will  be gladd if you will 
 help us. To do so please visit the "Contribution" setion.
 
-Motor n.1 - motor1
-Motor n.2 - motor2 
-Motor n.3 - motor3
-Motor n.4 - motor4
+Motor n.1 - MOTOR1
+Motor n.2 - MOTOR2
+Motor n.3 - MOTOR3
+Motor n.4 - MOTOR4
 
 Bulit in led - led
 
