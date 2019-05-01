@@ -12,18 +12,18 @@
 //pins
 
 //motors
-static const uint8_t motor1 = D26;
-static const uint8_t motor2 = D12;
-static const uint8_t motor3 = D14;
-static const uint8_t motor4 = D27;
+static const uint8_t MOTOR1 = D26;
+static const uint8_t MOTOR2 = D12;
+static const uint8_t MOTOR3 = D14;
+static const uint8_t MOTOR4 = D27;
 
 //led
-static const uint8_t led = D2;
+static const uint8_t BUILT_IN_LED = D2;
 
 //Servo(s)
-static const uint8_t servo1 = 17;
-static const uint8_t servo2 = 16;
-static const uint8_t servo3 = 4;
+static const uint8_t SERVO1 = 17;
+static const uint8_t SERVO2 = 16;
+static const uint8_t SERVO3 = 4;
 
 class octopuslibrary{
 
