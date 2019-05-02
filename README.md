@@ -48,6 +48,8 @@ Like other github projects this github repo has a issue tab with current issues 
 project. But, please respect all the rules included in the CODE_OF_CONDUCT.md file to
 prevent bad things here 🙌. If you dont know where to start, visit please the issues tab.
 
+Donate with bitcoin: 1Jbi1zvs3KTgY7Wc8SNLcJxSLe1uDRjizh
+
 Created by Tomas Roj and OctopusLab team in 2019. 📅
 This and many other projects are availibe under open-source MIT license. See the license file
 for more info. 📃
