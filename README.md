@@ -1,14 +1,14 @@
-# OctopusLab-Library 🌊🐙
+# OctopusLab-Library 🐙
 Arduino library for @octopusengine that make easier work with pins on their boards 🎉🔥
 
-## How it works ❓
+## How it works 
 
 This library make easier to work with pins on octopus engine boards. When this library is included it defines all the pins and you 
 can just use them. Just dont must worry about fining theese pins in documention etc. For all the pins
 please see the Pins & Support section below. This library also includes basic setup of all the 
 components availibe. To setup them just call a function (list of them is in the "functions()" section.
 
-## Pins & Support 💻
+## Pins & Support 
 
 Currently is supported only one board from octopus lab boards - robotboard. So pins below are for
 this board. ‼ This library is currently in heavy development ‼ That means even the library itself 
@@ -26,7 +26,7 @@ Servo n.1 - servo1
 Servo n.2 - servo2
 Servo n.3 - servo3
 
-## Functions() 🎶
+## Functions() 
 
 setupLed()
 led_blinking() - Blink a led diod
