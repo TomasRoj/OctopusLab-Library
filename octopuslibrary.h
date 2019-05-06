@@ -12,12 +12,12 @@
 //pins
 
 //DC motors with L293D
-#define MOTOR_12EN 25
-#define MOTOR_34EN 15
-#define MOTOR1A 26
-#define MOTOR2A 12
-#define MOTOR3A 14
-#define MOTOR4A 27
+#define PIN_MOTOR_12EN 25
+#define PIN_MOTOR_34EN 15
+#define PIN_MOTOR_1A 26
+#define PIN_MOTOR_2A 12
+#define PIN_MOTOR_3A 14
+#define PIN_MOTOR_4A 27
 
 //PWM / servos //WS
 #define PIN_PWM1 17
@@ -26,22 +26,22 @@
 
 //buttons and other stuff
 #define PIN_WS 13
-#define DEV1 32 // one wire - dallas
-#define DEV2 33 
+#define PIN_DEV1 32 // one wire - dallas
+#define PIN_DEV2 33 
 
 //led
-#define BUILT_IN_LED = 2;
+#define BUILT_IN_LED 2
 
 //Servo(s) / PWM
-#define SERVO1 = 17; 
-#define SERVO2 = 16;
-#define SERVO3 = 4;
+#define PIN_SERVO1 17 
+#define PIN_SERVO2 16
+#define PIN_SERVO3 4
 
 //Analog inputs
-#define I36 = 36;
-#define I39 = 39;
-#define I34 = 34;
-#define I35 = 35;
+#define PIN_I36 36
+#define PIN_I39 39
+#define PIN_I34 34
+#define PIN_I35 35
 
 class octopuslibrary{
 
