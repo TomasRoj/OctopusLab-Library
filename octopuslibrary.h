@@ -20,10 +20,17 @@ static const uint8_t MOTOR4 = D27;
 //led
 static const uint8_t BUILT_IN_LED = D2;
 
-//Servo(s)
-static const uint8_t SERVO1 = 17;
+//Servo(s) / PWM
+static const uint8_t SERVO1 = 17; 
 static const uint8_t SERVO2 = 16;
 static const uint8_t SERVO3 = 4;
+
+//Analog inputs
+static const uint8_t I36 = 36;
+static const uint8_t I39 = 39;
+static const uint8_t I34 = 34;
+static const uint8_t I35 = 35;
+
 
 class octopuslibrary{
 
