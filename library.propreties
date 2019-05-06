@@ -1,0 +1,10 @@
+name=OctopusLab-Library
+version=0.1
+author=Tomas Roj; OctopusEngine; 
+maintainer=Tomas Roj, rojtomas@email.cz
+sentence=Library for octopuslab modules that make easier work with pins. 
+paragraph=Arduino library for @octopusengine that make easier work with pins on their boards.
+category=Other
+url=https://github.com/TomasRoj/OctopusLab-Library
+architectures=*
+includes=octopuslibrary.h
