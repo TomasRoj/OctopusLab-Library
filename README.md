@@ -102,4 +102,4 @@ Respektuj ale prosím všechna pravidla, která jsou napsaná v CODE_OF_CONDUCT.
 Přispěj nám na další vývoj pomocí Bitcoinu na tuto adresu: 1Jbi1zvs3KTgY7Wc8SNLcJxSLe1uDRjizh
 
 Vytvořeno Tomášem Rojem a týmem OctopusEngine v roce 2019. 📅
-Tento a další moje projekty jsou k dispozici pod open-source licencí MIT. Navštiv soubor LICENSE, pro váce INFO. 📃
+Tento a další moje projekty jsou k dispozici pod open-source licencí MIT. Navštiv soubor LICENSE, pro více INFO. 📃
