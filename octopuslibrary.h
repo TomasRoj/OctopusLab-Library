@@ -12,13 +12,13 @@
 //pins
 
 //motors
-static const uint8_t MOTOR1 = D26;
-static const uint8_t MOTOR2 = D12;
-static const uint8_t MOTOR3 = D14;
-static const uint8_t MOTOR4 = D27;
+static const uint8_t MOTOR1 = 26;
+static const uint8_t MOTOR2 = 12;
+static const uint8_t MOTOR3 = 14;
+static const uint8_t MOTOR4 = 27;
 
 //led
-static const uint8_t BUILT_IN_LED = D2;
+static const uint8_t BUILT_IN_LED = 2;
 
 //Servo(s) / PWM
 static const uint8_t SERVO1 = 17; 
