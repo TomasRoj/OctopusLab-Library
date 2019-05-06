@@ -23,10 +23,10 @@
 #define PIN_PWM1 17
 #define PIN_PWM2 16
 #define PIN_PWM3  4
-#define PIN_WS 13
 
 //buttons and other stuff
-#define DEV1 32
+#define PIN_WS 13
+#define DEV1 32 // one wire - dallas
 #define DEV2 33 
 
 //led
