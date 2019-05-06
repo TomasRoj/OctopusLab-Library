@@ -11,26 +11,37 @@
 
 //pins
 
-//motors
-static const uint8_t MOTOR1 = 26;
-static const uint8_t MOTOR2 = 12;
-static const uint8_t MOTOR3 = 14;
-static const uint8_t MOTOR4 = 27;
+//DC motors with L293D
+#define MOTOR_12EN 25
+#define MOTOR_34EN 15
+#define MOTOR1A 26
+#define MOTOR2A 12
+#define MOTOR3A 14
+#define MOTOR4A 27
+
+//PWM / servos //WS
+#define PIN_PWM1 17
+#define PIN_PWM2 16
+#define PIN_PWM3  4
+#define PIN_WS 13
+
+//buttons and other stuff
+#define DEV1 32
+#define DEV2 33 
 
 //led
-static const uint8_t BUILT_IN_LED = 2;
+#define BUILT_IN_LED = 2;
 
 //Servo(s) / PWM
-static const uint8_t SERVO1 = 17; 
-static const uint8_t SERVO2 = 16;
-static const uint8_t SERVO3 = 4;
+#define SERVO1 = 17; 
+#define SERVO2 = 16;
+#define SERVO3 = 4;
 
 //Analog inputs
-static const uint8_t I36 = 36;
-static const uint8_t I39 = 39;
-static const uint8_t I34 = 34;
-static const uint8_t I35 = 35;
-
+#define I36 = 36;
+#define I39 = 39;
+#define I34 = 34;
+#define I35 = 35;
 
 class octopuslibrary{
 
