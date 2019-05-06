@@ -19,11 +19,6 @@
 #define PIN_MOTOR_3A 14
 #define PIN_MOTOR_4A 27
 
-//PWM / servos //WS
-#define PIN_PWM1 17
-#define PIN_PWM2 16
-#define PIN_PWM3  4
-
 //buttons and other stuff
 #define PIN_WS 13
 #define PIN_DEV1 32 // one wire - dallas
@@ -35,7 +30,7 @@
 //Servo(s) / PWM
 #define PIN_SERVO1 17 
 #define PIN_SERVO2 16
-#define PIN_SERVO3 4
+#define PIN_SERVO3 4 // ROBOT BTN
 
 //Analog inputs
 #define PIN_I36 36
