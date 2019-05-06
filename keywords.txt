@@ -1,0 +1,15 @@
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+octopuslibrary  KEYWORD1
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+led_blinking()  KEYWORD2  
+setupLed()  KEYWORD2
+setupMotors() KEYWORD2
+setupServo()  KEYWORD2
+setupAll()  KEYWORD2 
+#######################################
+# Constants (LITERAL1)
+#######################################
