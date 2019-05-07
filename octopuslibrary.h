@@ -25,7 +25,7 @@
 #define PIN_DEV2 33 
 
 //led
-#define BUILT_IN_LED 2
+#define led 2
 
 //Servo(s) / PWM
 #define PIN_SERVO1 17 
