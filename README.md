@@ -45,7 +45,7 @@ instance of the library (octopuslibrary instance() ).
 
 Then just call one of the functions and you are ready to go! 😊
 
-## Contribution 👏✌
+## Contribution 
 
 We are glad that people like you helps to build better future of electronics projects.
 Like other github projects this github repo has a issue tab with current issues in this
@@ -54,7 +54,7 @@ prevent bad things here 🙌. If you dont know where to start, visit please the 
 
 Created by Tomas Roj and OctopusLab team in 2019. 📅
 This and many other projects are availibe under open-source MIT license. See the license file
-for more info. 📃
+for more info. 
 
 # Czech Version
 
@@ -91,11 +91,11 @@ Stáhni si totu knihovnu z manažeru knihoven v Arduino IDE (momentálně nedost
 
 Potom jen zavolej jednu z funkcí a jsi ready! 😊
 
-## Příspěvek do vývoje knihovny 👏✌
+## Příspěvek do vývoje knihovny 
 
 Jsme hrdí, že lidi jako jsi ty pomáhají vytvářet lepší budoucnost elektroniky.
 Jako ostatní projekty, má i tento repo záložku ISSUES, kde najdeě aktuální problémy s tímto projektem.
 Respektuj ale prosím všechna pravidla, která jsou napsaná v CODE_OF_CONDUCT.md souboru, k prevenci špatných věcí 🙌. Pokud nevíš, kde začít prosím navštiv záložku ISSUES. Díky!
 
 Vytvořeno Tomášem Rojem a týmem OctopusEngine v roce 2019. 📅
-Tento a další moje projekty jsou k dispozici pod open-source licencí MIT. Navštiv soubor LICENSE, pro více INFO. 📃
+Tento a další moje projekty jsou k dispozici pod open-source licencí MIT. Navštiv soubor LICENSE, pro více INFO. 
