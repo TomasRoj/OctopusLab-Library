@@ -2,7 +2,7 @@
 
 ## About
 
-This section of examples folder includes some basic examples that works on ESP32. Its currently main board what we use on our modules. Every example includes comments so you should understand everythin just fine.
+This section of the examples folder includes some basic examples that work on ESP32. It's currently the main board what we use on our modules. Every example includes comments so you should understand everything just fine.
 
 ### Help us
 
