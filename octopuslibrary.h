@@ -9,8 +9,10 @@
 
 #include "Arduino.h"
 
-//pins
+//led on board
+#define BUILT_IN_LED 2
 
+//pins
 //DC motors with L293D
 #define PIN_MOTOR_12EN 25
 #define PIN_MOTOR_34EN 15
@@ -20,12 +22,9 @@
 #define PIN_MOTOR_4A 27
 
 //buttons and other stuff
-#define PIN_WS 13
+#define PIN_WS 13   // RGB led - neopixel.lib
 #define PIN_DEV1 32 // one wire - dallas
 #define PIN_DEV2 33 
-
-//led
-#define led 2
 
 //Servo(s) / PWM
 #define PIN_SERVO1 17 
