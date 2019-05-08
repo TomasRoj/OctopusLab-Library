@@ -3,14 +3,14 @@
 //Include library
 #include <octopuslibrary.h>
 
-//We dont need to import ESP32
-//servo library because library itself contains
-//all the rquied setup
+//We don't need to import ESP32
+//Servo library because library itself contains
+//all the required setup
 
 //Creates instance of library
 octopuslibrary lib()
 
-//Current positon of servo
+//Current position of servo
 int pos = 0;
 
 void setup(){

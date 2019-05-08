@@ -1,7 +1,7 @@
 /*
     octopuslibrary. Library to help users with using Octopuslab boards with ESP32: ROBOTboard and IOTboard
     Originally created by Tomas Roj and ing. Jan Copak.
-    This and other files are availibe under MIT license. This comment must be included in any future distibution.
+    This and other files are available under MIT license. This comment must be included in any future distribution.
 */
 
 #ifndef octopuslibrary_h
@@ -9,7 +9,7 @@
 
 #include "Arduino.h"
 
-//led on board
+//LED on board
 #define BUILT_IN_LED 2
 
 //pins
@@ -22,8 +22,8 @@
 #define PIN_MOTOR_4A 27
 
 //buttons and other stuff
-#define PIN_WS 13   // RGB led - neopixel.lib
-#define PIN_DEV1 32 // one wire - dallas
+#define PIN_WS 13   // RGB LED - neopixel.lib
+#define PIN_DEV1 32 // Dallas 1-Wire
 #define PIN_DEV2 33 
 
 //Servo(s) / PWM
