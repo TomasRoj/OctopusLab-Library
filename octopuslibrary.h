@@ -1,6 +1,6 @@
 /*
-    octopuslibrary. Library to help users with using Octopuslab boards.
-    Originally created by Tomas Roj.
+    octopuslibrary. Library to help users with using Octopuslab boards with ESP32: ROBOTboard and IOTboard
+    Originally created by Tomas Roj and ing. Jan Copak.
     This and other files are availibe under MIT license. This comment must be included in any future distibution.
 */
 
@@ -33,7 +33,7 @@
 #define PIN_SERVO3 4 // ROBOT BTN
 
 //Analog inputs
-#define PIN_I36 36
+#define PIN_I36 36 //battery
 #define PIN_I39 39
 #define PIN_I34 34
 #define PIN_I35 35
