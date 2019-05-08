@@ -1,7 +1,7 @@
-// Simple example of using esp32 to show
-//how easy is to work with fini on this board.
+// Simple example of using ESP32 to show
+//how easy is to work with WiFi on this board.
 //This example shows how to print some message to server.
-// All vasic examples of the chip itself are avilibe
+// All basic examples of the chip itself are available
 //on https://github.com/espressif/arduino-esp32.
 
 #include <WiFi.h>
@@ -38,7 +38,7 @@ void setup()
 void loop()
 {
     const uint16_t port = 80;
-    const char * host = "192.168.1.1"; // ip or dns
+    const char * host = "192.168.1.1"; // IP or DNS
 
     Serial.print("Connecting to ");
     Serial.println(host);

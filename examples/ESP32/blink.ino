@@ -1,4 +1,4 @@
-//Basic example of blinking builtin led of the ESP32
+//Basic example of blinking builtin LED of the ESP32
 //Include and creation of instance of the OctopusLab-Library
 
 //Include
@@ -8,12 +8,12 @@
 octopuslibrary lib()
 
 void setup(){
-    //We call function that intialize the led pin
+    //We call the function that initializes the LED pin
     lib.setupLed();
 }
 
 void loop(){
     //Library includes basic blinking example
-    //So no more command needed.
+    //So no more commands are needed.
     lib.led_blinking();
 }

@@ -1,8 +1,8 @@
-// Example of using esp32 chip to communite 
-//via bluetooth. All basic examples of the
-//chip itself are avilibe here: https://github.com/espressif/arduino-esp32.
+// Example of using ESP32 chip to communicate 
+//via Bluetooth. All basic examples of the
+//chip itself are available here: https://github.com/espressif/arduino-esp32.
 
-//This example creates a bluetooth server.
+//This example creates a Bluetooth server.
 
 /*
     Based on Neil Kolban example for IDF: https://github.com/nkolban/esp32-snippets/blob/master/cpp_utils/tests/BLE%20Tests/SampleServer.cpp
