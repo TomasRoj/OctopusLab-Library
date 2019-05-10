@@ -61,6 +61,43 @@ matrix:
       # https://github.com/per1234/arduino-ci-script#build_sketch-sketchpath-boardid-allowfail-ideversion
       - build_sketch "${SKETCHBOOK_FOLDER}/libraries/OctopusLab-Library/examples" "esp32:esp32:esp32doit-devkit-v1:FlashFreq=80,UploadSpeed=921600,DebugLevel=none" "false" "oldest" "newest"
 
+  # Use arduino-ci-script to do additional checks for common problems
+  - name: 'arduino-ci-script Extra Checks'
+
+    language: minimal
+
+    install:
+      # Install the script used to testing of the library
+      # https://github.com/per1234/arduino-ci-script
+      - git clone https://github.com/per1234/arduino-ci-script.git "${HOME}/scripts/arduino-ci-script"
+      - cd "${HOME}/scripts/arduino-ci-script"
+      # Get new tags from the remote
+      - git fetch --tags
+      # Checkout the latest tag
+      - git checkout $(git describe --tags `git rev-list --tags --max-count=1`)
+      - source "${HOME}/scripts/arduino-ci-script/arduino-ci-script.sh"
+
+      # Uncomment the following lines to get verbose output for debugging
+      # 0 (minimum/default) - 2 (maximum) verbosity
+      # - set_script_verbosity 2
+      #- set_verbose_output_during_compilation "true"
+
+    script:
+      # Check for common problems with the library structure
+      # https://github.com/per1234/arduino-ci-script#check_library_structure-basepath-depth
+      - check_library_structure "${TRAVIS_BUILD_DIR}"
+
+      # Check for common problems with library.properties
+      # https://github.com/per1234/arduino-ci-script#check_library_properties-searchpath-maximumsearchdepth
+      - check_library_properties "${TRAVIS_BUILD_DIR}"
+
+      # Check for common problems with keywords.txt
+      # https://github.com/per1234/arduino-ci-script#check_keywords_txt-searchpath-maximumsearchdepth
+      - check_keywords_txt "${TRAVIS_BUILD_DIR}"
+
+      # Do additional checks required to ensure compliance with the requirements for inclusion in the Arduino Library Manager index
+      - check_library_manager_compliance "${TRAVIS_BUILD_DIR}"
+
 
 notifications:
   email:
