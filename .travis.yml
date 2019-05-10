@@ -112,6 +112,8 @@ matrix:
       - find . -path './.git' -prune -or -type f -exec grep --with-filename --line-number --binary-files=without-match --regexp='[[:blank:]]$' '{}' \; -exec echo 'Trailing whitespace found.' \; -exec false '{}' +
       # Check for non-Unix line endings
       - find . -path './.git' -prune -or -type f -exec grep --files-with-matches --binary-files=without-match --regexp=$'\r$' '{}' \; -exec echo 'Non-Unix EOL detected.' \; -exec false '{}' +
+      # Check for blank lines at end of files
+      - find . -path './.git' -prune -or -type f -print0 | xargs -0 -L1 bash -c 'tail -1 "$0" | grep --binary-files=without-match --regexp="^$"; if [[ "$?" == "0" ]]; then echo "Blank line found at end of $0."; false; fi'
 
 notifications:
   email:
