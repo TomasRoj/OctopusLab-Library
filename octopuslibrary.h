@@ -4,7 +4,6 @@
     This and other files are available under MIT license. This comment must be included in any future distribution.
 */
 
-#ifndef octopuslibrary_h
 #define octopuslibrary_h
 
 #include "Arduino.h"
@@ -37,15 +36,9 @@
 #define PIN_I34 34
 #define PIN_I35 35
 
-class octopuslibrary {
 
-  public:
-    octopuslibrary();
-    void led_blinking();
-    void setupLed();
-    void setupMotors();
-    void setupServo();
-    void setupAll()
-}
-
-#endif
+void led_blinking();
+void setupLed();
+void setupMotors();
+void setupServo();
+void setupAll()

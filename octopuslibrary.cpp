@@ -5,19 +5,19 @@ void led_blinking() {
 
   setupLed()
 
-  digitalWrite(led, HIGH);
+  digitalWrite(BUILT_IN_LED, HIGH);
   delay(1500);
-  digitalWrite(led, LOW);
+  digitalWrite(BUILT_IN_LED, LOW);
   delay(1500);
 }
 
-void setupLed() {
-  pinMode(led, OUTPUT);
-  digitalWrite(led, LOW);
+void setuLed() {
+  pinMode(BUILT_IN_LED, OUTPUT);
+  digitalWrite(BUILT_IN_LED, LOW);
 }
 
 void setupMotors() {
-#include <AFMotor.h>
+  #include <AFMotor.h>
 
   AF_DCMotor Motor1(PIN_MOTOR_1A);
   AF_DCMotor Motor2(PIN_MOTOR_2A);
@@ -26,9 +26,7 @@ void setupMotors() {
 }
 
 void setupServo(int servoPin) {
-#include <ESP32_Servo.h>
-  Servo myservo;
-  myservo.attach(servoPin);
+  //todo
 }
 
 
