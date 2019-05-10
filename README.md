@@ -5,18 +5,18 @@ Czech version follows.
 
 !!! This Library is currently in heavy development and not tested fully yet. We don't recommend using this library in production !!!
 
-## How it works 
+## How it works
 
-This library makes it easier to work with pins on octopus engine boards. When this library is included it defines all the pins and you 
+This library makes it easier to work with pins on octopus engine boards. When this library is included it defines all the pins and you
 can just use them. You don't need to worry about finding the pins in documentation etc. For all the pins,
-please see the Pins & Support section below. This library also includes basic setup of all the 
+please see the Pins & Support section below. This library also includes basic setup of all the
 components available. To set them up, just call a function (list of them is in the "functions()" section.
 
-## Pins & Support 
+## Pins & Support
 
 Currently only the octopus lab robotboard is supported. So pins below are for this board.
-‼ This library is currently in heavy development ‼ That means even the library itself 
-can be a full of bugs and can't compile because we are still working on it. We will be glad if you will 
+‼ This library is currently in heavy development ‼ That means even the library itself
+can be a full of bugs and can't compile because we are still working on it. We will be glad if you will
 help us. To do so please visit the "Contribution" section.
 
 Motor n.1 - MOTOR1
@@ -30,7 +30,7 @@ Servo n.1 - servo1
 Servo n.2 - servo2
 Servo n.3 - servo3
 
-## Functions() 
+## Functions()
 
 setupLed()
 led_blinking() - Blink an LED diode
@@ -45,7 +45,7 @@ instance of the library (octopuslibrary instance() ).
 
 Then just call one of the functions and you are ready to go! 😊
 
-## Contribution 
+## Contribution
 
 We are glad that people like you help to build better future of electronics projects.
 Like other GitHub projects this GitHub repo has a Issues tab with current issues in this
@@ -54,7 +54,7 @@ prevent bad things here 🙌. If you don't know where to start, visit please the
 
 Created by Tomas Roj and OctopusLab team in 2019. 📅
 This and many other projects are available under open-source MIT license. See the LICENSE file
-for more info. 
+for more info.
 
 # Czech Version
 
@@ -77,7 +77,7 @@ Servo č.1 - SERVO1
 Servo č.2 - SERVO2
 Servo č.3 - SERVO3
 
-## Funkce() 
+## Funkce()
 
 setupLed()
 led_blinking() - Rozbliká diodu.
@@ -91,11 +91,11 @@ Stáhni si totu knihovnu z manažeru knihoven v Arduino IDE (momentálně nedost
 
 Potom jen zavolej jednu z funkcí a jsi ready! 😊
 
-## Příspěvek do vývoje knihovny 
+## Příspěvek do vývoje knihovny
 
 Jsme hrdí, že lidi jako jsi ty pomáhají vytvářet lepší budoucnost elektroniky.
 Jako ostatní projekty, má i tento repo záložku ISSUES, kde najdeě aktuální problémy s tímto projektem.
 Respektuj ale prosím všechna pravidla, která jsou napsaná v CODE_OF_CONDUCT.md souboru, k prevenci špatných věcí 🙌. Pokud nevíš, kde začít prosím navštiv záložku ISSUES. Díky!
 
 Vytvořeno Tomášem Rojem a týmem OctopusEngine v roce 2019. 📅
-Tento a další moje projekty jsou k dispozici pod open-source licencí MIT. Navštiv soubor LICENSE, pro více INFO. 
+Tento a další moje projekty jsou k dispozici pod open-source licencí MIT. Navštiv soubor LICENSE, pro více INFO.
