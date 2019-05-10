@@ -1,0 +1,68 @@
+# This file configures the Travis CI build for automated testing of the library
+env:
+matrix:
+  include:
+  # Compile the example sketches
+  - name: 'Compilation Test'
+
+    language: minimal
+
+    env:
+      # The Arduino IDE will be installed at {$APPLICATION_FOLDER}/arduino
+      - APPLICATION_FOLDER="${HOME}/arduino-ide"
+      # The library will be installed under {$SKETCHBOOK_FOLDER}/libraries
+      - SKETCHBOOK_FOLDER="${HOME}/arduino-sketchbook"
+
+    install:
+      # Install the script used to facilitate compilation testing of the example sketches
+      # https://github.com/per1234/arduino-ci-script
+      - git clone https://github.com/per1234/arduino-ci-script.git "${HOME}/scripts/arduino-ci-script"
+      - cd "${HOME}/scripts/arduino-ci-script"
+      # Get new tags from the remote
+      - git fetch --tags
+      # Checkout the latest tag
+      - git checkout $(git describe --tags `git rev-list --tags --max-count=1`)
+      - source "${HOME}/scripts/arduino-ci-script/arduino-ci-script.sh"
+
+      # Uncomment the following lines to get verbose output for debugging
+      # 0 (minimum/default) - 2 (maximum) verbosity
+      # - set_script_verbosity 2
+      #- set_verbose_output_during_compilation "true"
+
+      # Check for library issues that don't affect compilation
+      # https://github.com/per1234/arduino-ci-script#set_library_testing-library_testing
+      - set_library_testing "true"
+
+      # https://github.com/per1234/arduino-ci-script#set_application_folder-application_folder
+      - set_application_folder "$APPLICATION_FOLDER"
+      # https://github.com/per1234/arduino-ci-script#set_sketchbook_folder-sketchbook_folder
+      - set_sketchbook_folder "$SKETCHBOOK_FOLDER"
+
+      # Install "landmark" IDE versions to use for backwards compatibility testing
+      # https://github.com/per1234/arduino-ci-script#install_ide-ideversionlist
+      - install_ide '("1.8.0" "1.8.6" "newest")'
+
+      # Install Arduino core for the ESP32
+      # https://github.com/per1234/arduino-ci-script#install_package-packageid-packageurl
+      - install_package 'esp32:esp32' 'https://dl.espressif.com/dl/package_esp32_index.json'
+
+      # Install the library from the repository
+      # https://github.com/per1234/arduino-ci-script#install_library
+      - install_library
+
+      # Install library dependencies
+      # https://github.com/adafruit/Adafruit-Motor-Shield-library
+      - install_library '"Adafruit Motor Shield library"'
+      # https://github.com/jkb-git/ESP32Servo
+      - install_library 'https://github.com/jkb-git/ESP32Servo.git'
+
+    script:
+      # Compile all example sketches included with the library
+      # https://github.com/per1234/arduino-ci-script#build_sketch-sketchpath-boardid-allowfail-ideversion
+      - build_sketch "${SKETCHBOOK_FOLDER}/libraries/OctopusLab-Library/examples" "esp32:esp32:esp32doit-devkit-v1:FlashFreq=80,UploadSpeed=921600,DebugLevel=none" "false" "oldest" "newest"
+
+
+notifications:
+  email:
+    on_success: always
+    on_failure: always
