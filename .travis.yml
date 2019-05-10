@@ -66,3 +66,9 @@ notifications:
   email:
     on_success: always
     on_failure: always
+  webhooks:
+    # Use Travis Buddy to automatically comment on pull requests that result in a failed CI build
+    urls:
+      - https://www.travisbuddy.com/
+    on_success: never
+    on_failure: always
