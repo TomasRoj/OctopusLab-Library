@@ -1,4 +1,8 @@
+[![Build Status](https://travis-ci.com/TomasRoj/OctopusLab-Library.svg?branch=master)](https://travis-ci.com/TomasRoj/OctopusLab-Library)
+
+
 # OctopusLab-Library 🐙
+
 Arduino library for @octopusengine that makes it easier to work with pins on their boards 🎉🔥
 
 Czech version follows.
