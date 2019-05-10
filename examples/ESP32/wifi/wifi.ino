@@ -15,7 +15,7 @@ void setup()
     delay(10);
 
     // We start by connecting to a WiFi network
-    // Please write your ssid (name of your network) and password to it here.       
+    // Please write your ssid (name of your network) and password to it here.
     WiFiMulti.addAP("SSID", "passpasspass");
 
     Serial.println();

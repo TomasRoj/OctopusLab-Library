@@ -2,9 +2,9 @@
 #include "octopuslibrary.h"
 
 void led_blinking(){
-    
+
     setupLed()
-    
+
     digitalWrite(led, HIGH);
     delay(1500);
     digitalWrite(led, LOW);
@@ -26,9 +26,9 @@ void setupMotors(){
 }
 
 void setupServo(int servoPin){
-    #include <ESP32_Servo.h>     
-    Servo myservo;        
-    myservo.attach(servoPin);   
+    #include <ESP32_Servo.h>
+    Servo myservo;
+    myservo.attach(servoPin);
 }
 
 

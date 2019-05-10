@@ -1,4 +1,4 @@
-// Example of using ESP32 chip to communicate 
+// Example of using ESP32 chip to communicate
 //via Bluetooth. All basic examples of the
 //chip itself are available here: https://github.com/espressif/arduino-esp32.
 
