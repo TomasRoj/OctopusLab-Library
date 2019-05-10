@@ -37,15 +37,15 @@
 #define PIN_I34 34
 #define PIN_I35 35
 
-class octopuslibrary{
+class octopuslibrary {
 
-    public:
-        octopuslibrary();
-        void led_blinking();
-        void setupLed();
-        void setupMotors();
-        void setupServo();
-        void setupAll()
+  public:
+    octopuslibrary();
+    void led_blinking();
+    void setupLed();
+    void setupMotors();
+    void setupServo();
+    void setupAll()
 }
 
 #endif
