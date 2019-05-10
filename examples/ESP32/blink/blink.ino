@@ -4,16 +4,14 @@
 //Include
 #include <octopuslibrary.h>
 
-//Instance
-octopuslibrary lib()
 
 void setup(){
     //We call the function that initializes the LED pin
-    lib.setupLed();
+    setupLed();
 }
 
 void loop(){
     //Library includes basic blinking example
     //So no more commands are needed.
-    lib.led_blinking();
+    led_blinking();
 }
