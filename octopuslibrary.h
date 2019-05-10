@@ -24,10 +24,10 @@
 //buttons and other stuff
 #define PIN_WS 13   // RGB LED - neopixel.lib
 #define PIN_DEV1 32 // Dallas 1-Wire
-#define PIN_DEV2 33 
+#define PIN_DEV2 33
 
 //Servo(s) / PWM
-#define PIN_SERVO1 17 
+#define PIN_SERVO1 17
 #define PIN_SERVO2 16
 #define PIN_SERVO3 4 // ROBOT BTN
 
@@ -37,15 +37,15 @@
 #define PIN_I34 34
 #define PIN_I35 35
 
-class octopuslibrary{
+class octopuslibrary {
 
-    public:
-        octopuslibrary();
-        void led_blinking();
-        void setupLed();
-        void setupMotors();
-        void setupServo();
-        void setupAll()
+  public:
+    octopuslibrary();
+    void led_blinking();
+    void setupLed();
+    void setupMotors();
+    void setupServo();
+    void setupAll()
 }
 
-#endif 
+#endif

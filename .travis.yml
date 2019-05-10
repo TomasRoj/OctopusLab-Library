@@ -1,0 +1,167 @@
+# This file configures the Travis CI build for automated testing of the library
+env:
+matrix:
+  include:
+  # Compile the example sketches
+  - name: 'Compilation Test'
+
+    language: minimal
+
+    env:
+      # The Arduino IDE will be installed at {$APPLICATION_FOLDER}/arduino
+      - APPLICATION_FOLDER="${HOME}/arduino-ide"
+      # The library will be installed under {$SKETCHBOOK_FOLDER}/libraries
+      - SKETCHBOOK_FOLDER="${HOME}/arduino-sketchbook"
+
+    install:
+      # Install the script used to facilitate compilation testing of the example sketches
+      # https://github.com/per1234/arduino-ci-script
+      - git clone https://github.com/per1234/arduino-ci-script.git "${HOME}/scripts/arduino-ci-script"
+      - cd "${HOME}/scripts/arduino-ci-script"
+      # Get new tags from the remote
+      - git fetch --tags
+      # Checkout the latest tag
+      - git checkout $(git describe --tags `git rev-list --tags --max-count=1`)
+      - source "${HOME}/scripts/arduino-ci-script/arduino-ci-script.sh"
+
+      # Uncomment the following lines to get verbose output for debugging
+      # 0 (minimum/default) - 2 (maximum) verbosity
+      # - set_script_verbosity 2
+      #- set_verbose_output_during_compilation "true"
+
+      # Check for library issues that don't affect compilation
+      # https://github.com/per1234/arduino-ci-script#set_library_testing-library_testing
+      - set_library_testing "true"
+
+      # https://github.com/per1234/arduino-ci-script#set_application_folder-application_folder
+      - set_application_folder "$APPLICATION_FOLDER"
+      # https://github.com/per1234/arduino-ci-script#set_sketchbook_folder-sketchbook_folder
+      - set_sketchbook_folder "$SKETCHBOOK_FOLDER"
+
+      # Install "landmark" IDE versions to use for backwards compatibility testing
+      # https://github.com/per1234/arduino-ci-script#install_ide-ideversionlist
+      - install_ide '("1.8.0" "1.8.6" "newest")'
+
+      # Install Arduino core for the ESP32
+      # https://github.com/per1234/arduino-ci-script#install_package-packageid-packageurl
+      - install_package 'esp32:esp32' 'https://dl.espressif.com/dl/package_esp32_index.json'
+
+      # Install the library from the repository
+      # https://github.com/per1234/arduino-ci-script#install_library
+      - install_library
+
+      # Install library dependencies
+      # https://github.com/adafruit/Adafruit-Motor-Shield-library
+      - install_library '"Adafruit Motor Shield library"'
+      # https://github.com/jkb-git/ESP32Servo
+      - install_library 'https://github.com/jkb-git/ESP32Servo.git'
+
+    script:
+      # Compile all example sketches included with the library
+      # https://github.com/per1234/arduino-ci-script#build_sketch-sketchpath-boardid-allowfail-ideversion
+      - build_sketch "${SKETCHBOOK_FOLDER}/libraries/OctopusLab-Library/examples" "esp32:esp32:esp32doit-devkit-v1:FlashFreq=80,UploadSpeed=921600,DebugLevel=none" "false" "oldest" "newest"
+
+  # Use arduino-ci-script to do additional checks for common problems
+  - name: 'arduino-ci-script Extra Checks'
+
+    language: minimal
+
+    install:
+      # Install the script used to testing of the library
+      # https://github.com/per1234/arduino-ci-script
+      - git clone https://github.com/per1234/arduino-ci-script.git "${HOME}/scripts/arduino-ci-script"
+      - cd "${HOME}/scripts/arduino-ci-script"
+      # Get new tags from the remote
+      - git fetch --tags
+      # Checkout the latest tag
+      - git checkout $(git describe --tags `git rev-list --tags --max-count=1`)
+      - source "${HOME}/scripts/arduino-ci-script/arduino-ci-script.sh"
+
+      # Uncomment the following lines to get verbose output for debugging
+      # 0 (minimum/default) - 2 (maximum) verbosity
+      # - set_script_verbosity 2
+      #- set_verbose_output_during_compilation "true"
+
+    script:
+      # Check for common problems with the library structure
+      # https://github.com/per1234/arduino-ci-script#check_library_structure-basepath-depth
+      - check_library_structure "${TRAVIS_BUILD_DIR}"
+
+      # Check for common problems with library.properties
+      # https://github.com/per1234/arduino-ci-script#check_library_properties-searchpath-maximumsearchdepth
+      - check_library_properties "${TRAVIS_BUILD_DIR}"
+
+      # Check for common problems with keywords.txt
+      # https://github.com/per1234/arduino-ci-script#check_keywords_txt-searchpath-maximumsearchdepth
+      - check_keywords_txt "${TRAVIS_BUILD_DIR}"
+
+      # Do additional checks required to ensure compliance with the requirements for inclusion in the Arduino Library Manager index
+      - check_library_manager_compliance "${TRAVIS_BUILD_DIR}"
+
+  # Check the formatting of the repository's files
+  - name: 'Formatting Checks'
+
+    language: minimal
+
+    script:
+      # Check for files starting with a blank line
+      - find . -path './.git' -prune -or -type f -print0 | xargs -0 -L1 bash -c 'head -1 "$0" | grep --binary-files=without-match --regexp="^$"; if [[ "$?" == "0" ]]; then echo "Blank line found at start of $0."; false; fi'
+      # Check for true tabs (except for in keywords.txt, which requires it)
+      - find . -path './.git' -prune -or \( -not -name 'keywords.txt' -and -type f \) -exec grep --with-filename --line-number --binary-files=without-match --regexp=$'\t' '{}' \; -exec echo 'Tab found.' \; -exec false '{}' +
+      # Check for trailing whitespace
+      - find . -path './.git' -prune -or -type f -exec grep --with-filename --line-number --binary-files=without-match --regexp='[[:blank:]]$' '{}' \; -exec echo 'Trailing whitespace found.' \; -exec false '{}' +
+      # Check for non-Unix line endings
+      - find . -path './.git' -prune -or -type f -exec grep --files-with-matches --binary-files=without-match --regexp=$'\r$' '{}' \; -exec echo 'Non-Unix EOL detected.' \; -exec false '{}' +
+      # Check for blank lines at end of files
+      - find . -path './.git' -prune -or -type f -print0 | xargs -0 -L1 bash -c 'tail -1 "$0" | grep --binary-files=without-match --regexp="^$"; if [[ "$?" == "0" ]]; then echo "Blank line found at end of $0."; false; fi'
+      # Check for files that don't end in a newline (https://stackoverflow.com/a/25686825)
+      - find . -path './.git' -prune -or -type f -print0 | xargs -0 -L1 bash -c 'if test "$(grep --files-with-matches --binary-files=without-match --max-count=1 --regexp='.*' "$0")" && test "$(tail --bytes=1 "$0")"; then echo "No new line at end of $0."; false; fi'
+
+  # Check for compliance with the Arduino code style
+  - name: 'Code Formatting Check'
+
+    language: minimal
+
+    install:
+      # Install Artistic Style code formatter tool: http://astyle.sourceforge.net
+      - |
+        mkdir "${HOME}/astyle";
+        wget --no-verbose --output-document="${HOME}/astyle/astyle.tar.gz" "https://iweb.dl.sourceforge.net/project/astyle/astyle/astyle%203.1/astyle_3.1_linux.tar.gz";
+        tar --extract --file="${HOME}/astyle/astyle.tar.gz" --directory="${HOME}/astyle";
+        cd "${HOME}/astyle/astyle/build/gcc";
+        make;
+        export PATH=$PWD/bin:$PATH;
+        cd "$TRAVIS_BUILD_DIR"
+      # Download Arduino's Artistic Style configuration file
+      - wget --directory-prefix="${HOME}/astyle" https://raw.githubusercontent.com/arduino/Arduino/master/build/shared/examples_formatter.conf
+
+    script:
+      # check code formatting
+      - find . -regextype posix-extended -path './.git' -prune -or \( -iregex '.*\.((ino)|(h)|(hpp)|(hh)|(hxx)|(h\+\+)|(cpp)|(cc)|(cxx)|(c\+\+)|(cp)|(c)|(ipp)|(ii)|(ixx)|(inl)|(tpp)|(txx)|(tpl))$' -and -type f \) -print0 | xargs -0 -L1 bash -c 'if ! diff "$0" <(astyle --options=${HOME}/astyle/examples_formatter.conf --dry-run < "$0"); then echo "Non-compliant code formatting in $0"; false; fi'
+
+  # Check all files in the repository for commonly misspelled words
+  - name: 'Spell Check'
+
+    language: python
+
+    python: 3.6
+
+    install:
+      # Install codespell
+      # https://github.com/codespell-project/codespell
+      - pip install codespell
+
+    script:
+      - codespell --skip="${TRAVIS_BUILD_DIR}/.git" --ignore-words="${TRAVIS_BUILD_DIR}/extras/codespell-ignore-words-list.txt" "${TRAVIS_BUILD_DIR}"
+
+
+notifications:
+  email:
+    on_success: always
+    on_failure: always
+  webhooks:
+    # Use Travis Buddy to automatically comment on pull requests that result in a failed CI build
+    urls:
+      - https://www.travisbuddy.com/
+    on_success: never
+    on_failure: always
