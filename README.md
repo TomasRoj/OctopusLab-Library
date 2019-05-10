@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/TomasRoj/OctopusLab-Library.svg?branch=master)](https://travis-ci.com/TomasRoj/OctopusLab-Library)
+[![Build Status](https://travis-ci.com/TomasRoj/OctopusLab-Library.svg?branch=master)](https://travis-ci.com/TomasRoj/OctopusLab-Library) [![Coverage Status](https://coveralls.io/repos/github/TomasRoj/OctopusLab-Library/badge.svg?branch=master)](https://coveralls.io/github/TomasRoj/OctopusLab-Library?branch=master)
 
 
 # OctopusLab-Library 🐙
