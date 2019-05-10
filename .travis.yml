@@ -98,6 +98,14 @@ matrix:
       # Do additional checks required to ensure compliance with the requirements for inclusion in the Arduino Library Manager index
       - check_library_manager_compliance "${TRAVIS_BUILD_DIR}"
 
+  # Check the formatting of the repository's files
+  - name: 'Formatting Checks'
+
+    language: minimal
+
+    script:
+      # Check for files starting with a blank line
+      - find . -path './.git' -prune -or -type f -print0 | xargs -0 -L1 bash -c 'head -1 "$0" | grep --binary-files=without-match --regexp="^$"; if [[ "$?" == "0" ]]; then echo "Blank line found at start of $0."; false; fi'
 
 notifications:
   email:
