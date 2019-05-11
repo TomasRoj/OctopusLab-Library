@@ -20,7 +20,7 @@
 // This function a test of built in led.
 void led_blinking() {
 
-  setupLed() // Calls function that sets pin mode etc. Dont forget that one of clean code rules is that
+  setupLed(); // Calls function that sets pin mode etc. Dont forget that one of clean code rules is that
 	     //every function should do only one thing at the time. Thats the reason why there is call to function.
 
   digitalWrite(BUILT_IN_LED, HIGH);
