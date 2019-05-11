@@ -7,9 +7,9 @@
 /* We include a .h file,
  * which contains all the pins and functions what we use here.
  * When using it we and our end-users can just call simple pin name
- * and dont must worry about the pin number. The same principle
- * we use in theese functions. The total purpose of this library
- * in general isnt to do something like write something on display, 
+ * and don't must worry about the pin number. The same principle
+ * we use in these functions. The total purpose of this library
+ * in general isn't to do something like write something on display, 
  * contact some server etc. It only does the job of initializing pins
  * and make simpler and faster the development itself. 
 */
@@ -19,8 +19,8 @@
 // This function a test of built in led.
 void led_blinking() {
 
-  setupLed(); // Calls function that sets pin mode etc. Dont forget that one of clean code rules is that
-	     //every function should do only one thing at the time. Thats the reason why there is call to function.
+  setupLed(); // Calls function that sets pin mode etc. Don't forget that one of clean code rules is that
+	     //every function should do only one thing at the time. That's the reason why there is call to function.
 
   digitalWrite(BUILT_IN_LED, HIGH);
   delay(1500);
@@ -36,7 +36,7 @@ void setupLed() {
 
 //Inicializes the motors.
 void setupMotors() {
-  //We dont need to use any 3. party lib if we can use digitalWrite() !
+  //We don't need to use any 3. party lib if we can use digitalWrite() !
   
   pinMode(PIN_MOTOR_1A, OUTPUT);
   pinMode(PIN_MOTOR_2A, OUTPUT);
@@ -64,7 +64,7 @@ void setupServo() {
 
 /* This function setups all the components above.
  * It gives user option to setup all in one function call.
- * Thats good for clean code and more simple code in general.
+ * That's good for clean code and more simple code in general.
  */
 void setupAll() {
   setupLed();
