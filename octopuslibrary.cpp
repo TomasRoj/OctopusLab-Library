@@ -1,4 +1,3 @@
-
 /* Include of the Arduino extension of cpp so we can
  * use methods like pinmode() or digitalWrite().
 */

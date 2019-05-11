@@ -11,7 +11,6 @@ bugs from CI. Before that we cannot merge your pull request.
 
 ## Test on real hardware
 
-Before accepting your pull request we must make sure it works on real device perfectly without any bug. please make sure you test the code 
-on a real piece of hardware before making any pull request.
+Before accepting your pull request we must make sure it works on real device perfectly without any bug. Please make sure you test the code on a real piece of hardware before making any pull request.
 
 Thanks for your interest!
