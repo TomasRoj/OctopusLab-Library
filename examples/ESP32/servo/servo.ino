@@ -1,20 +1,18 @@
-//Servo control example on ESP32
-
-//Include library
+#include <ESP32_Servo.h>
 #include <octopuslibrary.h>
 
-//We don't need to import ESP32
-//Servo library because library itself contains
-//all the required setup
+Servo myservo;  // create servo object to control a servo
+                // 16 servo objects can be created on the ESP32
 
-//Creates instance of library
-octopuslibrary lib()
-
-//Current position of servo
-int pos = 0;
+int pos = 0;    // variable to store the servo position
+// Recommended PWM GPIO pins on the ESP32 include 2,4,12-19,21-23,25-27,32-33 
+int servoPin = PIN_SERVO1;
 
 void setup() {
-  lib.setupServo();
+  myservo.attach(servoPin);   // attaches the servo on pin 18 to the servo object
+                              // using default min/max of 1000us and 2000us
+                              // different servos may require different min/max settings
+                              // for an accurate 0 to 180 sweep
 }
 
 void loop() {
