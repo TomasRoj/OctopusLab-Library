@@ -48,7 +48,7 @@ void setupServo() {
   //Include of the Arduino library for servo control.
   #include <Servo.h>
 
-  Servo myservo;  // Creates servo object for the first servo to control a servo.
+  Servo myservo_1;  // Creates servo object for the first servo to control a servo.
   //Up to twelve servo objects can be created on most boards.
 
   //We do some more for two more servo
