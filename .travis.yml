@@ -53,8 +53,8 @@ matrix:
       # Install library dependencies
       # https://github.com/adafruit/Adafruit-Motor-Shield-library
       - install_library '"Adafruit Motor Shield library"'
-      # https://github.com/arduino-libraries/Servo
-      - install_library 'https://github.com/arduino-libraries/Servo.git'
+      # https://github.com/jkb-git/ESP32Servo
+      - install_library 'https://github.com/jkb-git/ESP32Servo.git'
 
     script:
       # Compile all example sketches included with the library

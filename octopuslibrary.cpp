@@ -45,20 +45,12 @@ void setupMotors() {
 }
 
 void setupServo() {
-  //Include of the Arduino library for servo control.
-  #include <Servo.h>
+  #include <ESP32_Servo.h>
+  #include <octopuslibrary.h>
 
-  Servo myservo_1;  // Creates servo object for the first servo to control a servo.
-  //Up to twelve servo objects can be created on most boards.
-
-  //We do some more for two more servo
-  Servo myservo_2;
-  Servo myservo_3;
-
-  //Now we attach every single servo to pin on the board.
-  myservo_1.attach(PIN_SERVO1);	
-  myservo_2.attach(PIN_SERVO2);
-  myservo_3.attach(PIN_SERVO3); 
+  Servo myservo;  // create servo object to control a servo
+                // 16 servo objects can be created on the ESP32
+  myservo.attach(PIN_SERVO1);
 }
 
 
