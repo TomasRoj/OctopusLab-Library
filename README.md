@@ -89,7 +89,7 @@ setupMotors()
 setupServo()
 setupAll() - Inicializuje všchny možné komponenty desky
 
-## Jak, tohle použít ⁉
+## Jak toto použít?
 
 Stáhni si totu knihovnu z manažeru knihoven v Arduino IDE (momentálně nedostupné) a vytvoř instanci knihovny (octopuslibrary instance() ).
 
