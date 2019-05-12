@@ -7,7 +7,7 @@ When you contribute please respect rules written in the CODE_OF_CONDUCT.md file.
 
 As you maybe know, as other github repositories we use Travis CI tests as a second factor of checking quality of code, bugs, misspelling etc. 
 It includes multiple checks where all must be passed without error. 
-Exception makes misspelling pull requests. Please make sure you fix all bugs from CI. 
+Exception makes misspelling pull requests. Please make sure you fix all bugs from CI.
 Before that we cannot merge your pull request. 
 
 ## Test on real hardware
