@@ -11,7 +11,6 @@
  * numbers.
 */ 
 
-
 #define octopuslibrary_h
 
 /* We must include the official Arduino C++ extension so we can use
@@ -53,7 +52,7 @@
  * the .cpp file - the main code of the library.
  * Any new function what we will want to implement later on
  * we must define here first.
-*/ 
+*/
 
 // Pins for another things
 void led_blinking();
