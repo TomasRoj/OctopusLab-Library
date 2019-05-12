@@ -62,4 +62,4 @@ void setupServo();
 
 // This function setups all the above. Please edit this function too
 // so it can setup the new function too with others on one call.
-void setupAll()
+void setupAll();
