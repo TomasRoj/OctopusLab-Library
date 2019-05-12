@@ -45,12 +45,7 @@ void setupMotors() {
 }
 
 void setupServo() {
-  #include <ESP32_Servo.h>
-  #include <octopuslibrary.h>
-
-  Servo myservo;  // create servo object to control a servo
-                // 16 servo objects can be created on the ESP32
-  myservo.attach(PIN_SERVO1);
+  //todo
 }
 
 
