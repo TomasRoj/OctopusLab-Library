@@ -35,6 +35,9 @@ class RobotBoard: public OctopusLibrary {
 
     public:
 
+        // Instance
+        RobotBoard();
+
         /* Here we define all the functions What we use in
         * the .cpp file - the main code of the library.
         * Any new function what we will want to implement later on
@@ -85,6 +88,9 @@ class RobotBoard: public OctopusLibrary {
 class IoTBoard: public OctopusLibrary {
 
     public:
+
+        // Instance
+        IoTBoard();
 
     private:
 

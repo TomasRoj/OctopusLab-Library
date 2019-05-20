@@ -17,7 +17,7 @@
 #include "octopuslibrary.h"
 
 // This function a test of built in led.
-void led_blinking() {
+void RobotBoard::led_blinking() {
 
   setupLed(); // Calls function that sets pin mode etc. Don't forget that one of clean code rules is that
 	     //every function should do only one thing at the time. That's the reason why there is call to function.
@@ -29,13 +29,13 @@ void led_blinking() {
 }
 
 //Sets up the LED
-void setupLed() {
+void RobotBoard::setupLed() {
   pinMode(BUILT_IN_LED, OUTPUT);
   digitalWrite(BUILT_IN_LED, LOW);
 }
 
 //Inicializes the motors.
-void setupMotors() {
+void RobotBoard::setupMotors() {
   //We don't need to use any 3. party lib if we can use digitalWrite() !
   
   pinMode(PIN_MOTOR_1A, OUTPUT);
@@ -44,7 +44,7 @@ void setupMotors() {
   pinMode(PIN_MOTOR_4A, OUTPUT);
 }
 
-void setupServo() {
+void RobotBoard::setupServo() {
   //todo
 }
 
@@ -53,7 +53,7 @@ void setupServo() {
  * It gives user option to setup all in one function call.
  * That's good for clean code and more simple code in general.
  */
-void setupAll() {
+void RobotBoard::setupAll() {
   setupLed();
   setupMotors();
   setupServo();
