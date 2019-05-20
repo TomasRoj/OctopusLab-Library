@@ -16,6 +16,21 @@
 
 #include "octopuslibrary.h"
 
+//Base class
+
+void OctopusLibrary::led_blinking() {
+
+    pinMode(2, OUTPUT);
+
+    digitalWrite(2, HIGH);
+    delay(1000);
+    digitalWrite(2, LOW);
+    delay(1000);
+
+}
+
+//Robot-board
+
 // This function a test of built in led.
 void RobotBoard::led_blinking() {
 

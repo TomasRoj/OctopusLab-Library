@@ -20,17 +20,15 @@
 #include "Arduino.h"
 
 // Base class for things what all the classes have together.
-
 class OctopusLibrary {
 
     public:
-
+        void led_blinking();
     private:
-        
+        //todo
 }
 
 // Class for robot board.
-
 class RobotBoard: public OctopusLibrary {
 
     public:
@@ -84,7 +82,6 @@ class RobotBoard: public OctopusLibrary {
 }
 
 // Class for IoT board
-
 class IoTBoard: public OctopusLibrary {
 
     public:
