@@ -33,10 +33,7 @@ void OctopusLibrary::thermometer() {
   //All the libraries
   #include <OneWire.h>
   #include <DallasTemperature.h>
-
   #define ONE_WIRE_BUS 32
-
-  Serial.begin(115200);
 
   // Setup a oneWire instance to communicate with any OneWire device
   OneWire oneWire(ONE_WIRE_BUS);	
@@ -46,7 +43,9 @@ void OctopusLibrary::thermometer() {
 
   // Prints the temperature
   sensors.requestTemperatures();
-  Serial.print(sensors.getTempCByIndex(0));
+  const int temperature = sensors.getTempCByIndex(0);
+
+  return temperature;
 
 }
 
