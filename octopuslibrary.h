@@ -24,6 +24,7 @@ class OctopusLibrary {
 
     public:
         void led_blinking();
+        const int VERSION = 0.1;
     private:
         //todo
 }
