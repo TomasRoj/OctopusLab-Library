@@ -29,6 +29,27 @@ void OctopusLibrary::led_blinking() {
 
 }
 
+void OctopusLibrary::thermometer() {
+  //All the libraries
+  #include <OneWire.h>
+  #include <DallasTemperature.h>
+
+  #define ONE_WIRE_BUS 32
+
+  Serial.begin(115200);
+
+  // Setup a oneWire instance to communicate with any OneWire device
+  OneWire oneWire(ONE_WIRE_BUS);	
+
+  // Pass oneWire reference to DallasTemperature library
+  DallasTemperature sensors(&oneWire);
+
+  // Prints the temperature
+  sensors.requestTemperatures();
+  Serial.print(sensors.getTempCByIndex(0));
+
+}
+
 //Robot-board
 
 // This function a test of built in led.

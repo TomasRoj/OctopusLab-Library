@@ -24,9 +24,9 @@ class OctopusLibrary {
 
     public:
         void led_blinking();
-        const int VERSION = 0.1;
+        void thermometer();
     private:
-        //todo
+        const int VERSION = 0.1;
 }
 
 // Class for robot board.
