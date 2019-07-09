@@ -4,7 +4,7 @@ Arduino library for @octopusengine that makes it easier to work with pins on the
 
 See readme(cz).md for instructions in Czech.
 
-!!! This Library is currently in heavy development and not tested fully yet. We don't recommend using this library in production !!!
+Library is availibe to download on arduino library manager. Download - OctopusLab-Library!
 
 ## How it works
 
@@ -41,7 +41,7 @@ setupAll() - Sets up all of the components.
 
 ## How to use this ⁉
 
-To use this library, please install it via Arduino Library Manager (not available yet) and make
+To use this library, please install it via Arduino Library Manager - OctopusLab-Library and make
 instance of the library (octopuslibrary instance() ).
 
 Then just call one of the functions and you are ready to go! 😊
