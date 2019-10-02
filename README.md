@@ -1,6 +1,7 @@
 # OctopusLab-Library 🐙
 
 Arduino library for @octopusengine that makes it easier to work with pins on their boards 🎉🔥
+Due to current non activity from octopuslab team and me, I am looking for someone who can help me devloping this library, maintain. If you are interested write me to BIO on my profile. Thanks.
 
 See readme(cz).md for instructions in Czech.
 
